@@ -646,7 +646,7 @@
                         <a href="#" class="bg-white/10 p-4 rounded-full hover:bg-white/20 transition-all hover:scale-110 backdrop-blur-sm">
                             <i class="fab fa-twitter text-lg"></i>
                         </a>
-                    </div>
+                    </div>  
                 </div>
                 
                 <div>
@@ -948,14 +948,10 @@
         }
         
         function updateStatistics(data) {
-            // คลิปล่าสุด
-            const recentDate = data.length > 0 && data[0].Date ? 
-                new Date(data[0].Date).toLocaleDateString('th-TH', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                }) : '-';
-            document.getElementById('recent-date').textContent = recentDate;
+            // แก้ไขที่นี่: แสดงวันที่ปัจจุบันแทนวันที่ของวิดีโอล่าสุด
+            const now = new Date();
+            const updateDate = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            document.getElementById('recent-date').textContent = updateDate;
             
             // คลิปยอดนิยม (สุ่มตัวอย่าง)
             const popularCount = Math.min(data.length, Math.floor(Math.random() * 20) + 10);
