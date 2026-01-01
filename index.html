@@ -697,13 +697,17 @@
             
             <div class="border-t border-white/20 mt-12 pt-8 text-center">
                 <p class="text-sm text-gray-400">
-                    © 2025 <span class="text-gradient font-bold">ประชาชนพูดได้</span> - Video Summary. All rights reserved.
+                    © 2025 - <span id="currentYear"></span> <span class="text-gradient font-bold">ประชาชนพูดได้</span> - Video Summary. All rights reserved.
                 </p>
                 <p class="text-xs text-gray-500 mt-2">เว็บไซต์นี้พัฒนาขึ้นเพื่อสรุปประเด็นสำคัญจากวิดีโอต่าง ๆ</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+        
     <script>
         // URL ของ Google Apps Script
         const GAS_URL = "https://script.google.com/macros/s/AKfycbz8QS0zgeUAV_XCGkJ1utZN2YBXbwiwR4ynKOaP688eSK6Dc92xHLroFwDbdeV9Je-0/exec";
